@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-export default function Background({ starCount = 2000 }) {
+export default function Background({ starCount = 1000 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Background({ starCount = 2000 }) {
     let stars = Array.from({ length: starCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 1.1 + 0.01,
+      radius: Math.random() * 1.5 + 0.01,
       opacity: Math.random(),
       speed: Math.random() * 0.007 + 0.001,
       baseColor: pickStarColor(),
@@ -53,7 +53,7 @@ export default function Background({ starCount = 2000 }) {
     const intervalId = setInterval(randomHaloTarget, 3000 + Math.random() * 1500);
 
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Background color
       ctx.fillStyle = "black";
@@ -105,6 +105,8 @@ export default function Background({ starCount = 2000 }) {
       ref={canvasRef}
       style={{
         position: "absolute",
+        width: "100%",
+        height: "100%",
         top: 0,
         left: 0,
         zIndex: -1,

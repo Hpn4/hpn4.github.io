@@ -1,0 +1,24 @@
+/* AnimatedText.css */
+.animated-text {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+}
+
+.animated-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  border-radius: 10px;
+  transition: width 0.3s ease; /* Animation duration */
+}
+
+.animated-text:hover::after {
+  width: 100%;
+}

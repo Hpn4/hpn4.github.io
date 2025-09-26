@@ -21,7 +21,7 @@ function drawHudBall(ctx, {
   const lineStartX = x + (radius + arcRadius) * Math.cos(midAngle);
   const lineStartY = y + (radius + arcRadius) * Math.sin(midAngle);
 
-  const lineLength = 200;
+  const lineLength = 100;
   const lineEndX = lineStartX + (side === "right" ? lineLength : -lineLength);
   const lineEndY = lineStartY + (angle > Math.PI ? - 40 : 40);
 
@@ -40,50 +40,11 @@ function drawHudBall(ctx, {
   ctx.fillText(text, lineEndX + (side === "right" ? 10 : -10), lineEndY + 7);
 }
 
-export default function OrbitCanvas({
+export default function MenuHome({
   width = window.innerWidth,
   height = window.innerHeight,
   max_radius = Math.min(width, height) / 2,
-  centerText = "Etienne SENIGOUT",
   orbitsData = [
-    {
-      radius: max_radius * 0.35,
-      speed: 0.003,
-      direction: 1,
-      dashed: true,
-      balls: []
-    },
-    {
-      radius: max_radius * 0.38,
-      speed: 0.002,
-      direction: -1,
-      dashed: false,
-      balls: [
-        { angle: Math.PI * 0.65, text: "" },
-        { angle: Math.PI * 1.3, text: "" },
-        { angle: Math.PI * 2, text: "" },
-      ],
-    },
-    {
-      radius: max_radius * 0.6,
-      speed: 0.002,
-      direction: 1,
-      dashed: false,
-      balls: [
-        { angle: 0, text: "" },
-        { angle: Math.PI, text: "" },
-      ],
-    },
-    {
-      radius: max_radius * 0.65,
-      speed: 0.0005,
-      direction: -1,
-      dashed: true,
-      balls: [
-        { angle: Math.PI / 2, text: ""},
-        { angle: Math.PI * 1.5, text: ""},
-      ],
-    },
     {
       radius: max_radius * 0.95,
       speed: 0.000,
@@ -116,17 +77,6 @@ export default function OrbitCanvas({
     function animate() {
       ctx.clearRect(0, 0, width, height);
 
-      // Title
-      ctx.fillStyle = "white";
-      ctx.font = "bold 28px Astro";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(centerText, centerX, centerY - 18);
-
-      ctx.fillStyle = "#3477eb";
-      ctx.font = "bold 24px Arial";
-      ctx.fillText("{Junior Developper}", centerX, centerY + 18);
-
       ctx.fillStyle = "white";
 
       // Dessin des orbites et boules (texte)
@@ -136,18 +86,8 @@ export default function OrbitCanvas({
         ctx.save();
 
         ctx.translate(centerX, centerY); // place le centre de rotation
-        ctx.rotate(orbit.rotation || 0);
         ctx.beginPath();
-
-        if (orbit.dashed) {
-          ctx.lineWidth = 10;
-          ctx.setLineDash([1, 7]); // pattern trait/espace
-          ctx.lineDashOffset = 0; // animation subtile
-        } else {
-          ctx.lineWidth = 1;
-          ctx.setLineDash([]); // reset
-        }
-
+        ctx.lineWidth = 1;
         ctx.arc(0, 0, orbit.radius, 0, Math.PI * 2);
         ctx.stroke();
         ctx.restore();
@@ -170,22 +110,7 @@ export default function OrbitCanvas({
             );
 
             drawHudBall(ctx, {x: x, y: y, text: ball.text, angle: ball.angle});
-          } else {
-            ctx.beginPath();
-            ctx.strokeStyle = "white";
-            ctx.arc(x, y, 10, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Texte cliquable
-            ctx.fillStyle = "white";
-            ctx.font = "18px Astro";
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            ctx.fillText(ball.text, x, y);
           }
-
-          // Mise à jour angle
-          ball.angle += orbit.speed * orbit.direction;
         });
       });
 
@@ -222,7 +147,7 @@ export default function OrbitCanvas({
 
     canvas.addEventListener("click", handleClick);
     return () => canvas.removeEventListener("click", handleClick);
-  }, [width, height, centerText, orbitsData]);
+  }, [width, height, orbitsData]);
 
   return (
     <>

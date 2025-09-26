@@ -1,16 +1,36 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import StarsBackground from "./components/StarsBackground";
-import OrbitCanvas from "./home/OrbitHome";
+import MenuHome from "./home/MenuHome";
+import HomeCircle from "./home/HomeCircle";
+import ButtonText from "./components/text/ButtonText";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [size, setSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setSize(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
-      <StarsBackground count={2000} />
-      <OrbitCanvas />
+      <StarsBackground/>
+      
+      {/* Circles with title inside going top in mobile or at the center on desktop*/}
+      <div style={{ position: "absolute", top: "0", left: "50%", transform: "translateX(-50%) translateY(-50%) scale(2)" }}>
+        <HomeCircle mobile={true}/>
+      </div>
+
+      {/* Navigation menu */}
+      <div className="home-nav-menu">
+        <ButtonText>About</ButtonText>
+        <ButtonText>Projects</ButtonText>
+        <ButtonText>Notes</ButtonText>
+        <ButtonText>Skills</ButtonText>
+        <ButtonText>Research</ButtonText>
+      </div>
     </>
   )
 }
