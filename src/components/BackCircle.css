@@ -1,0 +1,13 @@
+.back-title-circles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-70%) scale(2);
+}
+
+.back-title {
+  position: absolute;
+  top: 2vh;
+  left: 50%;
+  transform: translateX(-50%);
+}

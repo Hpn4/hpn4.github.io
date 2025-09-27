@@ -9,7 +9,7 @@ export default function Background({ starCount = 1000 }) {
 
     function resize() {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = document.documentElement.scrollHeight;
     }
     resize();
     window.addEventListener("resize", resize);
@@ -52,7 +52,7 @@ export default function Background({ starCount = 1000 }) {
 
     const intervalId = setInterval(randomHaloTarget, 3000 + Math.random() * 1500);
 
-    function animate() {
+    // function animate() {
       //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Background color
@@ -89,10 +89,10 @@ export default function Background({ starCount = 1000 }) {
         ctx.fill();
       });
 
-      requestAnimationFrame(animate);
-    }
+      //requestAnimationFrame(animate);
+    //}
 
-    animate();
+    //animate();
 
     return () => {
       window.removeEventListener("resize", resize);
@@ -104,7 +104,7 @@ export default function Background({ starCount = 1000 }) {
     <canvas
       ref={canvasRef}
       style={{
-        position: "absolute",
+        position: "fixed",
         width: "100%",
         height: "100%",
         top: 0,

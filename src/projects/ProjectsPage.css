@@ -1,0 +1,42 @@
+.projects-container {
+  display: flex;
+  flex-direction: row;       
+  justify-content: center;   
+  align-items: center;       
+  gap: 10px;
+  height: 100vh;             
+  overflow-x: auto;          
+  overflow-y: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* bandes verticales */
+.project-strip {
+  width: 130px;              /* largeur initiale */
+  height: 55vh;              
+  overflow: hidden;          
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  transition: width 0.5s ease; /* animation largeur */
+}
+
+/* image centrée dans la bande */
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          
+  object-position: center;     /* toujours centré */
+  filter: grayscale(40%) saturate(30%);
+  transition: filter 0.3s ease;
+}
+
+/* au hover : bande s'élargit et couleur */
+.project-strip:hover {
+  width: 500px;               /* largeur finale au hover */
+}
+
+.project-strip:hover .project-img {
+  filter: grayscale(0%) saturate(100%);
+}

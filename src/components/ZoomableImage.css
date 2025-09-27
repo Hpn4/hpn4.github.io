@@ -1,0 +1,53 @@
+.zoomable-thumb {
+  cursor: zoom-in;
+  max-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.zoomable-thumb:hover {
+  transform: scale(1.05);
+}
+
+.zoomable-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.25s ease forwards;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.zoomable-full {
+  max-width: 98%;
+  max-height: 98%;
+  border-radius: 8px;
+  animation: zoomIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.zoomable-overlay.closing {
+  animation: fadeOut 0.25s ease forwards;
+}
+.zoomable-full.closing {
+  animation: zoomOut 0.25s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes zoomOut {
+  from { transform: scale(1); opacity: 1; }
+  to   { transform: scale(0.7); opacity: 0; }
+}

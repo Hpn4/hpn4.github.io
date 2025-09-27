@@ -3,11 +3,3 @@
   padding: 2rem;
   text-align: center;
 }
-
-.home-nav-menu {
-  padding-top: 45vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 40px;
-}
