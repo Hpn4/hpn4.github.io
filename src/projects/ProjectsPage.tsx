@@ -8,6 +8,7 @@ import "./ProjectsPage.css"
 const projects = [
   { id: "tinyx", title: "Tinyx", img: "./projects/tinyx/services.png" },
   { id: "inde", title: "ButterflyKiller", img: "./projects/inde/drawing.png" },
+  { id: "caseai", title: "CaseAI", img: "./projects/caseAI/scenescreen.png" },
 ];
 
 function ProjectsPage() {

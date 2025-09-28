@@ -7,8 +7,7 @@ import HomePage from "./home/HomePage";
 import ProjectsPage from "./projects/ProjectsPage";
 import Tinyx from "./projects/Tinyx";
 import Inde from "./projects/Inde";
-
-import './App.css';
+import CaseAI from "./projects/CaseAI";
 
 function App() {
   const [size, setSize] = useState(window.innerWidth);
@@ -28,6 +27,7 @@ function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/project/tinyx" element={<Tinyx />} />
         <Route path="/project/inde" element={<Inde />} />
+        <Route path="/project/caseai" element={<CaseAI />} />
       </Routes>
     </BrowserRouter>
   )

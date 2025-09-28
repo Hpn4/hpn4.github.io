@@ -25,7 +25,7 @@ const Inde = () => {
       />
 
       <div className="project-body">
-        <Section title="INDE – Butterfly Killer" subtitle="A playful yet scalable data engineering POC">
+        <Section title="INDE – Butterfly Killer">
           <Paragraph>
             A proof-of-concept for the <em>Introduction to Data Engineering</em> course, built as a
             distributed multi-service system designed to process large volumes of data and react in

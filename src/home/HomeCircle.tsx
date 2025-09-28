@@ -36,27 +36,36 @@ const HomeCircle = ({ mobile = false, centerText = "Etienne SENIGOUT", roleText 
   }, [centerText, roleText]);
 
   const baseRadius = Math.max(textBox.width, textBox.height) / 2 + 20;
-  const maxRadius = (window.innerHeight / 2) * 0.4;
-  const radiusScale = maxRadius / (baseRadius + 110);
 
-  const orbitsData = [
+  let orbitsData = [
     { radius: (baseRadius + 10), reverse: true, speed: 6, dashed: true, balls: [] },
     { radius: (baseRadius + 20), reverse: false, speed: 7, dashed: false, balls: [{ angle: Math.PI * 0.65 }, { angle: Math.PI * 1.3 }, { angle: Math.PI * 2 }] },
-    { radius: (baseRadius + 100) * radiusScale, reverse: true, speed: 10, dashed: false, balls: [{ angle: 0 }, { angle: Math.PI }] },
-    { radius: (baseRadius + 110) * radiusScale, reverse: false, speed: 15, dashed: true, balls: [{ angle: Math.PI / 2 }, { angle: Math.PI * 1.5 }] },
+    { radius: (baseRadius + 50), reverse: true, speed: 10, dashed: false, balls: [{ angle: 0 }, { angle: Math.PI }] },
+    { radius: (baseRadius + 60), reverse: false, speed: 15, dashed: true, balls: [{ angle: Math.PI / 2 }, { angle: Math.PI * 1.5 }] },
   ];
+
+
+
+  if (window.innerWidth < 500)
+  {
+    orbitsData = [
+    { radius: (baseRadius + 10), reverse: true, speed: 6, dashed: true, balls: [] },
+    { radius: (baseRadius + 20), reverse: false, speed: 7, dashed: false, balls: [{ angle: Math.PI * 0.65 }, { angle: Math.PI * 1.3 }, { angle: Math.PI * 2 }] },
+  ];
+  }
 
   return (
     <div className="orbit-container" style={{
-      width: maxRadius * 2 + 50,
-      height: maxRadius * 2 + 50
+      width: window.innerWidth / 2,
+      height: window.innerHeight / 2,
+      overflow: "hidden"
     }}>
       <svg
-        width={maxRadius * 2 + 50}
-        height={maxRadius * 2 + 50}
-        style={{ overflow: "visible" }}
+        width="100%"
+        height="100%"
+        style={{ overflow: "hidden" }}
       >
-        <g transform={`translate(${maxRadius + 25}, ${maxRadius + 25})`}>
+        <g transform={`translate(${window.innerWidth / 4}, ${window.innerHeight / 4})`}>
           {orbitsData.map((orbit, idx) => (
             <Orbit key={idx} {...orbit} />
           ))}
@@ -65,10 +74,10 @@ const HomeCircle = ({ mobile = false, centerText = "Etienne SENIGOUT", roleText 
           <text
             ref={textRef}
             x="0"
-            y={mobile ? "30" : "-5"}
+            y="4vh"
             textAnchor="middle"
             fill="white"
-            fontSize="18"
+            fontSize="clamp(14px, 2vw, 18px)"
             fontFamily="Astro, sans-serif"
             fontWeight="bold"
           >
@@ -76,10 +85,10 @@ const HomeCircle = ({ mobile = false, centerText = "Etienne SENIGOUT", roleText 
           </text>
           <text
             x="0"
-            y={mobile ? "50" : "15"}
+            y="6vh"
             textAnchor="middle"
             fill="#3477eb"
-            fontSize="15"
+            fontSize="clamp(12px, 1.5vw, 16px)"
             fontFamily="Arial, sans-serif"
             fontWeight="bold"
           >

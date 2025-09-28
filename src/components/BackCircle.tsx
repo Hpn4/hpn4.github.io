@@ -51,15 +51,15 @@ const Circles = ({ lastCircle = true, centerText = "Back"}) => {
 
   return (
     <div className="orbit-container" style={{
-      width: maxRadius * 2 + 50,
-      height: maxRadius * 2 + 50
+      width: window.innerWidth / 2,
+      height: window.innerHeight / 2
     }}>
       <svg
-        width={maxRadius * 2 + 50}
-        height={maxRadius * 2 + 50}
+        width="100%"
+        height="100%"
         style={{ overflow: "visible" }}
       >
-        <g transform={`translate(${maxRadius + 25}, ${maxRadius + 25})`}>
+        <g transform={`translate(${window.innerWidth / 4}, ${window.innerHeight / 4 + 15})`}>
           {orbitsData.map((orbit, idx) => (
             <Orbit key={idx} {...orbit} />
           ))}
