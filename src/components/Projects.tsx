@@ -1,61 +1,51 @@
-import React from "react";
+import type { ReactNode } from "react";
+import type { ProjectMeta } from "../data/projects";
+import TechChip from "./TechChip";
+import ProjectMetaBadges from "./ProjectMetaBadges";
 import "./Projects.css";
 
-const TechIcon = ({ name }) => {
-  const src = name.startsWith("file:")
-    ? name.replace("file:", "/logo/")
-    : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${name}/${name}-original.svg`;
+export function Banner({ project }: { project: ProjectMeta }) {
+  const { banner, title, subtitle, techs, duration, groupSize, link, role } = project;
 
-  return (
-    <img
-      src={src}
-      alt={name}
-      title={name}
-      className="tech-icon"
-    />
-  );
-};
-
-
-export function Banner({ banner, title, subtitle, techs, duration, groupSize, link, role }) {
   return (
     <div className="project-header">
-      <div
-        className="banner"
-        style={{ backgroundImage: `url(${banner})` }}
-      >
+      <div className="banner" style={{ backgroundImage: `url(${banner})` }}>
         <div className="overlay">
+          <ProjectMetaBadges project={project} />
           <h1 className="title">{title}</h1>
           {subtitle && <p className="subtitle">{subtitle}</p>}
         </div>
       </div>
 
       <div className="project-metadata">
-        {duration && (<><strong>Duration:</strong> {duration}<br/></>)}
-        {groupSize && (<><strong>Group size:</strong> {groupSize}<br/></>)}
-        {link && (<>
-          <strong>Link:</strong> <a href={link} target="_blank" rel="noopener noreferrer">here</a><br/>
-        </>)}
-        {role && (<><strong>Role:</strong> {role}<br/></>)}
+        {duration && (<div><strong>Duration</strong><span>{duration}</span></div>)}
+        {groupSize && (<div><strong>Group size</strong><span>{groupSize}</span></div>)}
+        {role && (<div><strong>Role</strong><span>{role}</span></div>)}
+        {link && (
+          <div>
+            <strong>Repository</strong>
+            <a href={link} target="_blank" rel="noopener noreferrer">{link.replace("https://", "")}</a>
+          </div>
+        )}
       </div>
 
       {techs && techs.length > 0 && (
         <div className="tech-stack">
-          <p className="tech-label">Technical Stack:</p>
+          <p className="tech-label">Tech stack</p>
           <div className="tech-icons">
             {techs.map((tech) => (
-              <TechIcon key={tech} name={tech} />
+              <TechChip key={tech} name={tech} />
             ))}
           </div>
         </div>
       )}
     </div>
   );
-};
+}
 
 type SectionProps = {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function Section({ title, children }: SectionProps) {
@@ -65,10 +55,10 @@ export function Section({ title, children }: SectionProps) {
       <div className="project-content">{children}</div>
     </div>
   );
-};
+}
 
 type ParagraphProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function Paragraph({ children }: ParagraphProps) {

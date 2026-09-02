@@ -1,8 +1,11 @@
 .zoomable-thumb {
+  display: block;
   cursor: zoom-in;
-  max-width: 300px;
-  padding-left: 10px;
+  max-height: 400px;
+  max-width: 80%;
+  margin: 1rem auto 0;
   transition: transform 0.3s ease;
+  border-radius: 10px;
 }
 
 .zoomable-thumb:hover {
@@ -28,27 +31,68 @@
   animation: zoomIn 0.25s ease forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.zoomable-overlay-scroll {
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 1vw 0;
+  cursor: default;
 }
+
+.zoomable-full-width {
+  width: 98vw;
+  max-width: 98vw;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes zoomIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .zoomable-overlay.closing {
   animation: fadeOut 0.25s ease forwards;
 }
+
 .zoomable-full.closing {
   animation: zoomOut 0.25s ease forwards;
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
+
 @keyframes zoomOut {
-  from { transform: scale(1); opacity: 1; }
-  to   { transform: scale(0.7); opacity: 0; }
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(0.7);
+    opacity: 0;
+  }
 }

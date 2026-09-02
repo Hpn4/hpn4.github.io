@@ -1,0 +1,85 @@
+.timeline {
+  position: relative;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 6.5rem 1.25rem 1fr;
+  column-gap: 1rem;
+  row-gap: 2.5rem;
+}
+
+/* Continuous vertical spine, drawn once behind every row instead of per-row
+   segments, so it stretches correctly regardless of each card's height. */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  bottom: 0;
+  left: 8.125rem; /* date column + gap + half the dot column */
+  transform: translateX(-50%);
+  width: 1.5px;
+  background: var(--text-bright);
+  box-shadow: 0 0 4px rgba(240, 246, 252, 0.5);
+}
+
+.timeline-date {
+  grid-column: 1;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.timeline-dot-wrap {
+  grid-column: 2;
+  height: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-bright);
+  box-shadow: 0 0 4px rgba(240, 246, 252, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-card-wrap {
+  grid-column: 3;
+  position: relative;
+}
+
+/* Short horizontal stub branching off the spine into the card, same visual
+   language (bright line + glow) as the vertical Connector used elsewhere. */
+.timeline-card-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: -1.625rem;
+  width: 1.625rem;
+  height: 1.5px;
+  background: var(--text-bright);
+  box-shadow: 0 0 4px rgba(240, 246, 252, 0.5);
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    grid-template-columns: 3.5rem 1.25rem 1fr;
+  }
+
+  .timeline::before {
+    left: 5.125rem;
+    transform: translateX(-50%);
+  }
+
+  .timeline-date {
+    font-size: 0.72rem;
+  }
+}

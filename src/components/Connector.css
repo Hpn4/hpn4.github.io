@@ -1,0 +1,37 @@
+.connector {
+  position: relative;
+  height: 2.5rem;
+  width: 10px;
+  margin: 0 auto;
+}
+
+.connector-line {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  bottom: 5px;
+  width: 1.5px;
+  transform: translateX(-50%);
+  background: var(--text-bright);
+  box-shadow: 0 0 4px rgba(240, 246, 252, 0.5);
+}
+
+.connector-dot {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 5px;
+  background: var(--text-bright);
+  transform: translateX(-50%);
+  box-shadow: 0 0 4px rgba(240, 246, 252, 0.5);
+}
+
+.connector-dot-top {
+  top: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.connector-dot-bottom {
+  bottom: 0;
+  border-radius: 5px 5px 0 0;
+}

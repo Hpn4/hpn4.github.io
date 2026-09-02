@@ -1,40 +1,29 @@
-import { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
-
-import BackCircle from "../components/BackCircle";
-
-import "./ProjectsPage.css"
-
-const projects = [
-  { id: "tinyx", title: "Tinyx", img: "./projects/tinyx/services.png" },
-  { id: "inde", title: "ButterflyKiller", img: "./projects/inde/drawing.png" },
-  { id: "caseai", title: "CaseAI", img: "./projects/caseAI/scenescreen.png" },
-];
+import Page from "../components/Page";
+import TerminalCard from "../components/TerminalCard";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
+import "./ProjectsPage.css";
 
 function ProjectsPage() {
-  const [size, setSize] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
-    <>
-      <BackCircle/>
+    <Page>
+      <TerminalCard
+        prompt="~/projects $"
+        command="ls"
+        description={[
+          "A selection of academic and personal projects, with a focus on DevOps and",
+          "deployment, plus a wide range of others driven by curiosity and a taste for",
+          "trying new things.",
+        ]}
+      />
 
-      <div className="projects-container">
-        {projects.map((p) => (
-          <Link key={p.id} to={`/project/${p.id}`} className="project-link">
-            <div className="project-strip">
-              <img src={p.img} alt={p.title} className="project-img" />
-            </div>
-          </Link>
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-    </>
-  )
+    </Page>
+  );
 }
 
 export default ProjectsPage;

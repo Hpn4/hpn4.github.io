@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/*
+  Single source of truth for the visual theme. Swapping the look of the
+  site later ("different DevOps palette") should mean editing values here,
+  not hunting through component CSS files.
+*/
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* GitHub Dark inspired palette */
+  --bg-canvas: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2330;
+  --bg-terminal: #080a0d;
+  --border: #30363d;
+  --border-muted: #21262d;
+
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-bright: #f0f6fc;
+
+  --accent-green: #3fb950;
+  --accent-green-dim: rgba(63, 185, 80, 0.15);
+  --accent-blue: #58a6ff;
+  --accent-blue-dim: rgba(88, 166, 255, 0.15);
+  --accent-amber: #d29922;
+  --accent-amber-dim: rgba(210, 153, 34, 0.15);
+  --accent-red: #f85149;
+
+  --radius: 6px;
+  --radius-lg: 10px;
+
+  /* Space between the sticky nav and the first element — identical on every page. */
+  --page-top-gap: 2rem;
+  /* Content column width — identical on every page, so nothing "accordions" on navigation. */
+  --page-max-width: 900px;
+
+  --shadow-card: 0 1px 0 rgba(1, 4, 9, 0.4);
+
+  color-scheme: dark;
+}

@@ -1,0 +1,17 @@
+.research-event-logo-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+
+.research-event-logo-link:hover {
+  opacity: 1;
+}
+
+.research-event-logo-link img {
+  display: block;
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}

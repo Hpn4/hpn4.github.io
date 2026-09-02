@@ -1,0 +1,7 @@
+.clip-video {
+  display: block;
+  max-height: 400px;
+  max-width: 80%;
+  margin: 1rem auto 0;
+  border-radius: 10px;
+}

@@ -1,31 +1,20 @@
-import React from "react";
+import ZoomableImage from "../components/ZoomableImage";
+import Pipeline from "../components/Pipeline";
+import Connector from "../components/Connector";
+import Page from "../components/Page";
+import { Banner, Section, Paragraph } from "../components/Projects";
+import { getProject } from "../data/projects";
 
-import ZoomableImage from "../components/ZoomableImage"
-import BackCircle from "../components/BackCircle"
-import { Banner, Section, Paragraph } from "../components/Projects"
+const project = getProject("inde");
 
 const Inde = () => {
   return (
-    <>
-      <BackCircle lastCircle={false} to={"/projects"}/>
-      <Banner
-        banner="/projects/inde/drawing.png"
-        title="Butterfly Killer"
-        subtitle="A playful scalable data engineering POC."
-        techs={[
-          "scala", "bash",           // languages
-          "apachespark",// frameworks
-          "apachekafka", "file:minio.png", "file:timescaledb.webp", // databases
-          "grafana", "docker", "kubernetes", "helm", "github" // DevOps
-        ]}
-        duration="2 months"
-        groupSize="4 with Pierre B., Paul P., Matthieu F. and myself."
-        role="Architecture designer & Kubernetes developer"
-        link="https://github.com/Hpn4/INDE-ButterflyKiller/"
-      />
+    <Page>
+      <Banner project={project} />
 
       <div className="project-body">
-        <Section title="INDE – Butterfly Killer">
+        <Connector />
+        <Section title="INDE: Butterfly Killer">
           <Paragraph>
             A proof-of-concept for the <em>Introduction to Data Engineering</em> course, built as a
             distributed multi-service system designed to process large volumes of data and react in
@@ -39,7 +28,16 @@ const Inde = () => {
           </Paragraph>
         </Section>
 
+        <Connector />
         <Section title="Architecture">
+          <Pipeline
+            stages={[
+              { label: "Camera service", detail: "IoT simulation" },
+              { label: "Identification", detail: "CV model" },
+              { label: "Storage", detail: "Kafka + MinIO" },
+              { label: "Analytics", detail: "Spark + TimescaleDB + Grafana" },
+            ]}
+          />
           <Paragraph>
             <ul>
               <li><strong>Camera service (IoT simulation):</strong> Sends butterfly images at intervals and reacts to alerts.</li>
@@ -58,7 +56,7 @@ const Inde = () => {
           <ZoomableImage src="/projects/inde/architecture.png" alt="ButterflyKiller architecture" />
         </Section>
       </div>
-    </>
+    </Page>
   );
 };
 

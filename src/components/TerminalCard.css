@@ -1,0 +1,30 @@
+.terminal-card {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  background: var(--bg-terminal);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.terminal-prompt {
+  color: var(--accent-green);
+}
+
+.terminal-title {
+  color: var(--text-bright);
+  font-weight: 700;
+}
+
+.terminal-desc {
+  display: inline-block;
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.7em;
+  line-height: 1.5;
+}

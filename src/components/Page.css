@@ -1,0 +1,8 @@
+.page {
+  width: 100%;
+  min-width: 0;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--page-top-gap) 1.5rem 4rem;
+  box-sizing: border-box;
+}

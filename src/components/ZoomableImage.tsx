@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./ZoomableImage.css";
 
 type ZoomableImageProps = {
   src: string;
   alt?: string;
+  // "contain" (default): shrink to fit the screen, no scrolling.
+  // "width": fill the available width and scroll vertically instead of
+  // shrinking, better for tall images like an A0 poster.
+  fit?: "contain" | "width";
 };
 
-export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
+export default function ZoomableImage({ src, alt, fit = "contain" }: ZoomableImageProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -43,13 +47,13 @@ export default function ZoomableImage({ src, alt }: ZoomableImageProps) {
 
       {isOpen && (
         <div
-          className={`zoomable-overlay ${isClosing ? "closing" : ""}`}
+          className={`zoomable-overlay ${fit === "width" ? "zoomable-overlay-scroll" : ""} ${isClosing ? "closing" : ""}`}
           onClick={close}
         >
           <img
             src={src}
             alt={alt}
-            className={`zoomable-full ${isClosing ? "closing" : ""}`}
+            className={`zoomable-full ${fit === "width" ? "zoomable-full-width" : ""} ${isClosing ? "closing" : ""}`}
           />
         </div>
       )}

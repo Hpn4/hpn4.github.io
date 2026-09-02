@@ -1,18 +1,36 @@
-.home-title-circles {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(2);
+.hero {
+  padding: 0 0 3rem;
+  border-bottom: 1px solid var(--border-muted);
 }
 
-.home-nav-menu {
-  position: absolute;
-  top: 40vh;
-  left: 50vw;
-  transform: translateX(-50%);
+.home-section {
+  padding: 3rem 0;
+}
+
+.home-section-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  gap: 40px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.home-section-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.home-section-more {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.home-section-more:hover {
+  color: var(--accent-blue);
+}
+
+.home-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }

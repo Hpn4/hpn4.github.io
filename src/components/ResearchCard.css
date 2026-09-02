@@ -1,0 +1,71 @@
+.research-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.research-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.research-card-thumb {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(20%);
+}
+
+.research-card:hover .research-card-thumb {
+  filter: grayscale(0%);
+}
+
+.research-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.research-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.research-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-bright);
+}
+
+.research-card-subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.research-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--bg-canvas);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+}
+
+.research-card-badge svg {
+  color: var(--accent-green);
+  flex-shrink: 0;
+}

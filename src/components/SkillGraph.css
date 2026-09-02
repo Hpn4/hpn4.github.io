@@ -1,0 +1,162 @@
+.skill-graph {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0.75rem 0;
+}
+
+.skill-graph-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.skill-graph-edge {
+  fill: none;
+  stroke: var(--text-muted);
+  stroke-width: 1;
+  opacity: 0.35;
+}
+
+.skill-graph-edge-active {
+  stroke: var(--accent-green);
+  stroke-width: 2;
+  opacity: 0.9;
+}
+
+.skill-graph-col-tech {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.skill-graph-col-tech-b {
+  margin-top: 2.75rem;
+}
+
+.skill-graph-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.skill-graph-node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: var(--bg-terminal);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.skill-graph-node .tech-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.skill-graph-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.skill-graph-node.active .skill-graph-node-icon {
+  border-width: 2px;
+  border-color: var(--accent-green);
+}
+
+.skill-graph-node.active .skill-graph-label {
+  color: var(--text-bright);
+}
+
+.skill-graph-col-project-wrap {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-graph-col-project {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem 1.25rem;
+  justify-items: center;
+}
+
+.skill-graph-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.skill-graph-project-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border);
+}
+
+.skill-graph-project.active .skill-graph-project-avatar {
+  border-width: 2px;
+  border-color: var(--accent-green);
+}
+
+.skill-graph-project-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.skill-graph-project.active .skill-graph-project-label {
+  color: var(--text-bright);
+}
+
+@media (max-width: 560px) {
+  .skill-graph {
+    gap: 1.25rem;
+  }
+  .skill-graph-col-tech-b {
+    margin-top: 1.5rem;
+  }
+  .skill-graph-node-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .skill-graph-node .tech-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .skill-graph-label {
+    font-size: 0.65rem;
+  }
+  .skill-graph-col-project-wrap {
+    width: 100px;
+  }
+  .skill-graph-col-project {
+    grid-template-columns: 1fr;
+  }
+  .skill-graph-project-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}

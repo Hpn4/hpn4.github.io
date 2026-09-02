@@ -1,46 +1,37 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react'
-
-import HomeCircle from "./HomeCircle";
-
-import ButtonText from "../components/text/ButtonText";
-
-import './HomePage.css';
+import Page from "../components/Page";
+import TerminalCard from "../components/TerminalCard";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
+import "./HomePage.css";
 
 function HomePage() {
-  const [size, setSize] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setSize(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return (
-    <>
-      {/* Circles with title inside going top in mobile or at the center on desktop*/}
-      <div className="home-title-circles">
-        <HomeCircle mobile={true}/>
-      </div>
+    <Page>
+      <section className="hero">
+        <TerminalCard
+          command="whoami"
+          title="Etienne Senigout"
+          description={[
+            "Computer Science Engineer looking for a DevOps / SRE position.",
+            "Curious and rigorous, I like understanding things deeply and solving problems.",
+          ]}
+        />
+      </section>
 
-      {/* Navigation menu */}
-      <nav className="home-nav-menu">
-        <ButtonText>About</ButtonText>
-        
-        <Link to="/projects">
-          <ButtonText>Projects</ButtonText>
-        </Link>
-        
-        <a href="https://hpn4.github.io/QuartzObsidian" target="_blank" rel="noopener noreferrer">
-          <ButtonText>Notes</ButtonText>
-        </a>
-        
-        <ButtonText>Skills</ButtonText>
-        
-        <ButtonText>Research</ButtonText>
-      </nav>
-    </>
-  )
+      <section className="home-section">
+        <div className="home-section-header">
+          <h2>Featured projects</h2>
+          <Link to="/projects" className="home-section-more">see all</Link>
+        </div>
+        <div className="home-project-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+    </Page>
+  );
 }
 
 export default HomePage;

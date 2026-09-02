@@ -1,0 +1,74 @@
+.pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  margin: 1.5rem 0;
+}
+
+.pipeline-step {
+  display: flex;
+  align-items: center;
+}
+
+.pipeline-stage {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+  text-align: center;
+  min-width: 120px;
+}
+
+.pipeline-stage-label {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.pipeline-stage-detail {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+.pipeline-connector-h {
+  position: relative;
+  width: 2rem;
+  margin: 0 4px;
+  height: 1.3px;
+  flex-shrink: 0;
+}
+
+.pipeline-connector-h-line {
+  position: absolute;
+  inset: 0;
+  background: var(--text-bright);
+}
+
+@media (max-width: 560px) {
+  .pipeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pipeline-step {
+    flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .pipeline-stage {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pipeline-connector-h {
+    width: 1px;
+    height: 1.5rem;
+    margin: 0.1rem auto;
+  }
+}

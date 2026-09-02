@@ -1,0 +1,56 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.project-card-thumb {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(20%);
+}
+
+.project-card:hover .project-card-thumb {
+  filter: grayscale(0%);
+}
+
+.project-card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-bright);
+}
+
+.project-card-subtitle {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.project-card-techs {
+  position: relative;
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+
+.project-card-techs .tech-icon {
+  width: 20px;
+  height: 20px;
+}
