@@ -31,6 +31,17 @@
   margin-top: 0;
 }
 
+@media (max-width: 640px) {
+  .about-jumpnav {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .about-section {
+    margin-top: 1.5rem;
+  }
+}
+
 .about-section-title {
   margin: 0;
   font-size: 1.3rem;

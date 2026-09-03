@@ -5,8 +5,6 @@ export interface ProjectMeta {
   title: string;
   subtitle: string;
   context: ProjectContext;
-  teamSize: number;
-  roleShort: string;
   thumb: string;
   banner: string;
   techs: string[];
@@ -23,8 +21,6 @@ export const projects: ProjectMeta[] = [
     title: "ONERA",
     subtitle: "A CNN and foundation-model pipeline classifying Arctic sea-ice surface types from Sentinel-3 satellite imagery.",
     context: "school",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/onera/fig_21_vs_rgb.png",
     banner: "/projects/onera/fig_21_vs_rgb.png",
     techs: ["python", "pytorch", "opencv", "scikitlearn", "qt", "opengl", "jupyter", "nixos", "github"],
@@ -38,8 +34,6 @@ export const projects: ProjectMeta[] = [
     title: "Tinyx",
     subtitle: "A distributed Twitter-like platform built with a microservices architecture.",
     context: "school",
-    teamSize: 14,
-    roleShort: "Lead",
     thumb: "/projects/tinyx/services.png",
     banner: "/projects/tinyx/services.png",
     techs: [
@@ -58,8 +52,6 @@ export const projects: ProjectMeta[] = [
     title: "Forge Deploy",
     subtitle: "Terraform, Ansible, k3s and ArgoCD deploying a full GitOps-managed service stack.",
     context: "school",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/epita-forge-deploy/banner.png",
     banner: "/projects/epita-forge-deploy/banner.png",
     techs: ["terraform", "openstack", "ansible", "k3s", "argocd", "postgresql", "apachekafka", "file:minio.png", "github"],
@@ -74,8 +66,6 @@ export const projects: ProjectMeta[] = [
     title: "Butterfly Killer",
     subtitle: "A playful scalable data engineering proof of concept.",
     context: "school",
-    teamSize: 4,
-    roleShort: "Architect",
     thumb: "/projects/inde/drawing.png",
     banner: "/projects/inde/drawing.png",
     techs: [
@@ -95,8 +85,6 @@ export const projects: ProjectMeta[] = [
     title: "Holovibes",
     subtitle: "Real-time GPU-accelerated digital holography, used for live eye fundus imaging.",
     context: "school",
-    teamSize: 49,
-    roleShort: "Lead",
     thumb: "/projects/holovibes/oeil.jpg",
     banner: "/projects/holovibes/oeil.jpg",
     techs: ["cplusplus", "c", "file:nvidia.svg", "cmake", "github"],
@@ -111,8 +99,6 @@ export const projects: ProjectMeta[] = [
     title: "ChondritesViewer",
     subtitle: "Automated segmentation and interactive visualization of chondritic meteorites from SEM scans.",
     context: "school",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/chondritesviewer/ui.webp",
     banner: "/projects/chondritesviewer/ui.webp",
     techs: ["python", "pytorch", "opencv", "qt", "opengl", "jupyter", "github"],
@@ -127,8 +113,6 @@ export const projects: ProjectMeta[] = [
     title: "RL Breakout",
     subtitle: "Deep Q-Network experiments training an agent to master Atari Breakout.",
     context: "personal",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/rl-breakout/banner.jpg",
     banner: "/projects/rl-breakout/banner.jpg",
     techs: ["python", "pytorch", "numpy", "github"],
@@ -143,8 +127,6 @@ export const projects: ProjectMeta[] = [
     title: "HEngine",
     subtitle: "A hobby 3D game engine built from scratch with LWJGL and OpenGL.",
     context: "personal",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/hengine/screenshot.webp",
     banner: "/projects/hengine/screenshot.webp",
     techs: ["java", "maven", "opengl", "github"],
@@ -159,8 +141,6 @@ export const projects: ProjectMeta[] = [
     title: "HMessager",
     subtitle: "An end-to-end encrypted Android messenger built on the Signal Protocol.",
     context: "personal",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/hmessager/conv.png",
     banner: "/projects/hmessager/conv.png",
     techs: ["kotlin", "java", "android", "jetpackcompose", "github"],
@@ -175,8 +155,6 @@ export const projects: ProjectMeta[] = [
     title: "Advent of Code",
     subtitle: "Solutions to the annual Advent of Code puzzles across multiple years, in Python.",
     context: "personal",
-    teamSize: 1,
-    roleShort: "Solo",
     thumb: "/projects/adventofcode/banner.png",
     banner: "/projects/adventofcode/banner.png",
     techs: ["python", "c", "bash", "github"],
@@ -191,8 +169,6 @@ export const projects: ProjectMeta[] = [
     title: "Gamma Leonis",
     subtitle: "A desktop Mastodon client built with JavaFX.",
     context: "school",
-    teamSize: 5,
-    roleShort: "Developer",
     thumb: "/projects/gamma-leonis/main.png",
     banner: "/projects/gamma-leonis/main.png",
     techs: ["java", "maven", "hibernate", "githubactions", "github"],
@@ -207,8 +183,6 @@ export const projects: ProjectMeta[] = [
     title: "CaseAI",
     subtitle: "An AI-generated murder mystery investigation game.",
     context: "personal",
-    teamSize: 2,
-    roleShort: "Backend",
     thumb: "/projects/caseAI/scenescreen.png",
     banner: "/projects/caseAI/scenescreen.png",
     techs: ["javascript", "html5", "css3", "prolog", "github"],

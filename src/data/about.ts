@@ -127,4 +127,13 @@ export const achievements: AboutEntry[] = [
     image: "/about/hackathon.jpg",
     imageAlt: "Team photo after winning Challenge 4 at the Drone Defense Hackathon",
   },
+  {
+    date: "2025",
+    title: "Holovibes: Real-Time Ultrahigh-Speed Digital Hologram Rendering and Short-Time Analysis",
+    org: "arXiv",
+    period: "Aug 2025",
+    detail: "Publication describing the Holovibes platform, co-authored with the full team of contributors.",
+    link: "https://arxiv.org/abs/2508.03911",
+    linkLabel: "Read the paper on arXiv",
+  },
 ];

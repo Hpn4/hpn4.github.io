@@ -1,0 +1,15 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.social-link {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.social-link:hover {
+  color: var(--text-bright);
+}

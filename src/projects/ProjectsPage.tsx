@@ -11,9 +11,7 @@ function ProjectsPage() {
         prompt="~/projects $"
         command="ls"
         description={[
-          "A selection of academic and personal projects, with a focus on DevOps and",
-          "deployment, plus a wide range of others driven by curiosity and a taste for",
-          "trying new things.",
+          "A selection of academic and personal projects, with a focus on DevOps and deployment, plus a wide range of others driven by curiosity and a taste for trying new things.",
         ]}
       />
 

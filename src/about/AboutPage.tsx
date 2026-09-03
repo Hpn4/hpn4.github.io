@@ -7,6 +7,17 @@ import { Section, Paragraph } from "../components/Projects";
 import { experience, education, achievements, type AboutEntry } from "../data/about";
 import "./AboutPage.css";
 
+function EntryLink({ href, children }: { href: string; children: React.ReactNode }) {
+  if (href.startsWith("/")) {
+    return <Link to={href}>{children}</Link>;
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
+  );
+}
+
 function entryContent(entry: AboutEntry) {
   return (
     <Section title={entry.title}>
@@ -33,7 +44,7 @@ function entryContent(entry: AboutEntry) {
       {entry.image && <ZoomableImage src={entry.image} alt={entry.imageAlt ?? entry.title} />}
       {entry.link && (
         <Paragraph>
-          <Link to={entry.link}>{entry.linkLabel ?? "See more"}</Link>
+          <EntryLink href={entry.link}>{entry.linkLabel ?? "See more"}</EntryLink>
         </Paragraph>
       )}
     </Section>
@@ -46,7 +57,7 @@ function AboutPage() {
       <TerminalCard
         prompt="~/about $"
         command="ls"
-        description={["A quick introduction to who I am and what I'm looking for."]}
+        description={["Who I am, what I have done and some of my achievements."]}
       />
 
       <nav className="about-jumpnav" aria-label="Jump to section">

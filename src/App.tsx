@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NetworkBackground from "./components/NetworkBackground";
 import ScrollToTop from "./components/ScrollToTop";
 import TopNav from "./components/nav/TopNav";
+import Footer from "./components/Footer";
 
 import HomePage from "./home/HomePage";
 import ProjectsPage from "./projects/ProjectsPage";
@@ -52,6 +53,8 @@ function App() {
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/research/:id" element={<ResearchTopic />} />
         </Routes>
+
+        <Footer />
       </div>
     </BrowserRouter>
   );

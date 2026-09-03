@@ -16,8 +16,7 @@ function SkillsPage() {
         prompt="~/skills $"
         command="ls"
         description={[
-          "Extracted directly from the projects on this site: every skill listed here",
-          "was actually used to ship something. Hover a node to trace the link.",
+          "Every skill listed was used for a project, hover a node to trace the link.",
         ]}
       />
 

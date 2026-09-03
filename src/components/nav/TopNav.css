@@ -72,29 +72,33 @@
   50%, 100% { opacity: 0; }
 }
 
-.top-nav-social {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.top-nav-github {
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-}
-
-.top-nav-github:hover {
-  color: var(--text-bright);
-}
-
 @media (max-width: 640px) {
   .top-nav {
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
   }
+
   .top-nav-links {
-    order: 3;
-    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0.3rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .top-nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .top-nav-pill {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.1rem;
+    white-space: nowrap;
+  }
+
+  /* Freed up by moving the social icons into the footer on mobile, so the
+     nav links have enough room to fit on a single line. */
+  .top-nav-social {
+    display: none;
   }
 }

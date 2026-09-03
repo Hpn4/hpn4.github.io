@@ -39,7 +39,14 @@ export default function NetworkBackground({ density = 0.0035 }: { density?: numb
     let lastTime = 0;
 
     function makeNodes() {
-      const count = Math.max(50, Math.min(150, Math.round(width * height * density)));
+      // The min/max clamp below is what caps node count on large screens
+      // (raw width*height*density would otherwise run into the thousands),
+      // but a flat cap means a narrow phone viewport (much smaller area)
+      // ends up with roughly the same node count as a desktop, i.e. a much
+      // higher visual density. Scale both bounds down with viewport width.
+      const maxNodes = width < 500 ? 45 : width < 900 ? 90 : 150;
+      const minNodes = width < 500 ? 20 : 50;
+      const count = Math.max(minNodes, Math.min(maxNodes, Math.round(width * height * density)));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,

@@ -22,9 +22,10 @@
 }
 
 .terminal-desc {
-  display: inline-block;
-  margin-top: 0.2rem;
-  color: var(--text-muted);
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text);
   font-size: 0.7em;
   line-height: 1.5;
+  text-align: justify;
 }
