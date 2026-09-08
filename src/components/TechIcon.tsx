@@ -41,6 +41,7 @@ const LABELS: Record<string, string> = {
   "minio.png": "MinIO",
   "timescaledb.webp": "TimescaleDB",
   "nvidia.svg": "NVIDIA / CUDA",
+  "gnu.webp": "GNU (Make / Autotools)",
   terraform: "Terraform",
   openstack: "OpenStack",
   ansible: "Ansible",

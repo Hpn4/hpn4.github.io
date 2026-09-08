@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import Page from "../components/Page";
 import TerminalCard from "../components/TerminalCard";
 import ProjectCard from "../components/ProjectCard";
+import AchievementCard from "../components/AchievementCard";
 import { projects } from "../data/projects";
+import { achievements } from "../data/about";
 import "./HomePage.css";
+
+const featuredProjects = projects.filter((project) => project.featured);
 
 function HomePage() {
   return (
@@ -13,7 +17,7 @@ function HomePage() {
           command="whoami"
           title="Etienne Senigout"
           description={[
-            "Computer Science Engineer looking for a DevOps / SRE position.",
+            "Computer Science Engineer looking for a position.",
             "Curious and rigorous, I like understanding things deeply and solving problems.",
           ]}
         />
@@ -21,11 +25,23 @@ function HomePage() {
 
       <section className="home-section">
         <div className="home-section-header">
+          <h2>Achievements</h2>
+          <Link to="/about#achievements" className="home-section-more">see all</Link>
+        </div>
+        <div className="home-achievement-row">
+          {achievements.map((achievement) => (
+            <AchievementCard key={achievement.title} achievement={achievement} />
+          ))}
+        </div>
+      </section>
+
+      <section className="home-section">
+        <div className="home-section-header">
           <h2>Featured projects</h2>
           <Link to="/projects" className="home-section-more">see all</Link>
         </div>
-        <div className="home-project-grid">
-          {projects.map((project) => (
+        <div className="home-project-row">
+          {featuredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

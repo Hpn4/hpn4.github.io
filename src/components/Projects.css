@@ -111,3 +111,22 @@
   color: var(--text);
   text-align: justify;
 }
+
+.project-image-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-image-row .zoomable-thumb {
+  max-width: 160px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .project-image-row .zoomable-thumb {
+    max-width: 120px;
+  }
+}

@@ -14,6 +14,11 @@ import RLBreakout from "./projects/RLBreakout";
 import ChondritesViewer from "./projects/ChondritesViewer";
 import AdventOfCode from "./projects/AdventOfCode";
 import GammaLeonis from "./projects/GammaLeonis";
+import MyVSwitch from "./projects/MyVSwitch";
+import FortySh from "./projects/FortySh";
+import Malloc from "./projects/Malloc";
+import Httpd from "./projects/Httpd";
+import MinecraftTextureGen from "./projects/MinecraftTextureGen";
 import HEngine from "./projects/HEngine";
 import HMessager from "./projects/HMessager";
 import Holovibes from "./projects/Holovibes";
@@ -43,6 +48,11 @@ function App() {
           <Route path="/project/chondritesviewer" element={<ChondritesViewer />} />
           <Route path="/project/adventofcode" element={<AdventOfCode />} />
           <Route path="/project/gamma-leonis" element={<GammaLeonis />} />
+          <Route path="/project/myvswitch" element={<MyVSwitch />} />
+          <Route path="/project/42sh" element={<FortySh />} />
+          <Route path="/project/malloc" element={<Malloc />} />
+          <Route path="/project/httpd" element={<Httpd />} />
+          <Route path="/project/minecraft-texture-gen" element={<MinecraftTextureGen />} />
           <Route path="/project/hengine" element={<HEngine />} />
           <Route path="/project/hmessager" element={<HMessager />} />
           <Route path="/project/holovibes" element={<Holovibes />} />

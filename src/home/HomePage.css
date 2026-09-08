@@ -1,19 +1,19 @@
 .hero {
-  padding: 0 0 3rem;
+  padding: 0 0 1.5rem;
   border-bottom: 1px solid var(--border-muted);
 }
 
 .home-section {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding-bottom: 1.25rem;
+    padding-bottom: 1rem;
   }
 
   .home-section {
-    padding: 1.25rem 0;
+    padding: 1rem 0;
   }
 }
 
@@ -39,8 +39,35 @@
   color: var(--accent-blue);
 }
 
-.home-project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.home-achievement-row,
+.home-project-row {
+  display: flex;
   gap: 1.25rem;
+  overflow-x: auto;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  margin-top: -0.4rem;
+}
+
+.home-achievement-row>*,
+.home-project-row>* {
+  flex: 0 0 auto;
+}
+
+.home-achievement-row>* {
+  width: 300px;
+}
+
+.home-project-row>* {
+  width: 280px;
+}
+
+@media (max-width: 640px) {
+  .home-achievement-row>* {
+    width: 260px;
+  }
+
+  .home-project-row>* {
+    width: 240px;
+  }
 }
