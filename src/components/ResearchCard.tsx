@@ -2,6 +2,25 @@ import { Link } from "react-router-dom";
 import type { ResearchTopic } from "../data/research";
 import "./ResearchCard.css";
 
+function ArrowIcon() {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      width="12"
+      height="12"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="2.5" y1="8" x2="13.5" y2="8" />
+      <polyline points="9,3.5 13.5,8 9,12.5" />
+    </svg>
+  );
+}
+
 function CalendarIcon() {
   return (
     <svg
@@ -28,7 +47,12 @@ export default function ResearchCard({ topic }: { topic: ResearchTopic }) {
 
   return (
     <Link to={`/research/${topic.id}`} className="research-card">
-      <div className="research-card-thumb" style={{ backgroundImage: `url(${topic.banner})` }} />
+      <div className="research-card-thumb" style={{ backgroundImage: `url(${topic.banner})` }}>
+        <span className="research-card-cta">
+          <span>View topic</span>
+          <ArrowIcon />
+        </span>
+      </div>
       <div className="research-card-body">
         <div className="research-card-title-row">
           <h3 className="research-card-title">{topic.title}</h3>

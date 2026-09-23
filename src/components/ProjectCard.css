@@ -14,6 +14,7 @@
 }
 
 .project-card-thumb {
+  position: relative;
   height: 160px;
   background-size: cover;
   background-position: center;
@@ -53,4 +54,36 @@
 .project-card-techs .tech-icon {
   width: 20px;
   height: 20px;
+}
+
+.project-card-cta {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(13, 17, 23, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.project-card-cta svg {
+  transition: transform 0.15s ease;
+}
+
+.project-card:hover .project-card-cta {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.project-card:hover .project-card-cta svg {
+  transform: translateX(3px);
 }

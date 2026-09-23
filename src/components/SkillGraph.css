@@ -17,13 +17,15 @@
 .skill-graph-edge {
   fill: none;
   stroke: var(--text-muted);
-  stroke-width: 1;
+  stroke-width: 0.5;
+  stroke-dasharray: 4 10;
   opacity: 0.35;
 }
 
 .skill-graph-edge-active {
   stroke: var(--accent-green);
-  stroke-width: 2;
+  stroke-width: 1;
+  stroke-dasharray: 4 10;
   opacity: 0.9;
 }
 
@@ -73,8 +75,9 @@
 }
 
 .skill-graph-node.active .skill-graph-node-icon {
-  border-width: 2px;
+  border-width: 3px;
   border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px var(--accent-green-dim);
 }
 
 .skill-graph-node.active .skill-graph-label {
@@ -117,8 +120,9 @@
 }
 
 .skill-graph-project.active .skill-graph-project-avatar {
-  border-width: 2px;
+  border-width: 3px;
   border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px var(--accent-green-dim);
 }
 
 .skill-graph-project-label {
@@ -135,26 +139,33 @@
   .skill-graph {
     gap: 1.25rem;
   }
+
   .skill-graph-col-tech-b {
     margin-top: 1.5rem;
   }
+
   .skill-graph-node-icon {
     width: 48px;
     height: 48px;
   }
+
   .skill-graph-node .tech-icon {
     width: 26px;
     height: 26px;
   }
+
   .skill-graph-label {
     font-size: 0.65rem;
   }
+
   .skill-graph-col-project-wrap {
     width: 100px;
   }
+
   .skill-graph-col-project {
     grid-template-columns: 1fr;
   }
+
   .skill-graph-project-avatar {
     width: 48px;
     height: 48px;

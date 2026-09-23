@@ -34,8 +34,11 @@
 
   /* Space between the sticky nav and the first element — identical on every page. */
   --page-top-gap: 2rem;
-  /* Content column width — identical on every page, so nothing "accordions" on navigation. */
-  --page-max-width: 900px;
+  /* Content column width — identical on every page, so nothing "accordions" on navigation.
+     Scales with viewport (~80% of it) instead of sitting at a fixed px value. The cap only
+     exists to stop truly huge (4K+) displays from getting unreadable line lengths — it should
+     never bind on common 1440p/"2K" screens. */
+  --page-max-width: min(2200px, 80vw);
 
   --shadow-card: 0 1px 0 rgba(1, 4, 9, 0.4);
 

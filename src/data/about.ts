@@ -72,28 +72,6 @@ export const experience: AboutEntry[] = [
     link: "/project/epita-forge-deploy",
     linkLabel: "See the Forge Deploy project",
   },
-  {
-    date: "2023",
-    title: "Store Associate",
-    org: "Carrefour",
-    type: "Fixed-term contract",
-    period: "Aug 2023 (1 month)",
-    location: "Saint-Grégoire, France",
-    mode: "On-site",
-    detail: "Checkout, shelf stocking, inventory and stock management, delivery receiving and parcel handling.",
-    logo: "/about/logos/carrefour.png",
-  },
-  {
-    date: "2022 - 23",
-    title: "Store Associate",
-    org: "Carrefour",
-    type: "Permanent contract",
-    period: "Jul 2022 - Jan 2023 (7 months)",
-    location: "Saint-Grégoire, France",
-    mode: "On-site",
-    detail: "Checkout, shelf stocking, inventory and stock management, parcel handling.",
-    logo: "/about/logos/carrefour.png",
-  },
 ];
 
 export const education: AboutEntry[] = [
